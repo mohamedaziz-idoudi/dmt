@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('http://fonts.cdnfonts.com/css/ethnocentric');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    /*--color-blue: #324f79;
+    --color-blue-light: #0084A6;
+    --color-blue-super-light: #63CFEA;
+    --color-green-light: #00AC7C;
+    --color-green-super-light: #79E381;
+    --text-gradient:linear-gradient(to left, #ffffff, #eaefff, #c9e2fe, #9cd8f8, #63cfea);
+    --color-main: #9D4400;
+    --color-green: #005A34;
+
+
+    --color-grey: #434343;
+    --color-purple: #9E9DFF;
+    --color-light-grey:#5B5969;
+    --color-shiny: #D3FBD8;
+    */
+    --color-main: #845EC2;
+    --color-main-light: #d1c0ec;
+    
+    --gradient : linear-gradient(97.81deg, #845EC2 -27.32%, #A55DBD -10.37%, #C15DB5 5.88%, #D95FAB 22.13%, rgba(236, 100, 160, 0.71) 81.97%, rgba(255, 138, 122, 0.6) 107.75%);
+    --font-family: 'Open Sans', sans-serif;
+    --font-OS: 'Open Sans', sans-serif;
+}

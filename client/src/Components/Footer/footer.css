@@ -1,0 +1,110 @@
+.arsolaire__footer {
+    padding:50px 0;
+    background :var(--gradient);
+    color:white;
+  }
+  .arsolaire__footer a:hover {
+    text-decoration: none;
+    color: var(--color-main-light);
+  }
+  .arsolaire__footer h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  .arsolaire__footer ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:0;
+  }
+  #footer_email {
+    font-size: 0.9em;
+  }
+  .arsolaire__footer ul a {
+    color:inherit;
+    text-decoration:none !important;
+    opacity:0.8;
+  }
+  
+  .arsolaire__footer ul a:hover {
+    opacity:1;
+  }
+  
+  .arsolaire__footer .item.social {
+    text-align:right;
+  }
+  .arsolaire__footer_line {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .arsolaire__footer .container #arsolaire_def {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .arsolaire__footer .container .item img {
+    width: 80%;
+    margin-left: -2rem ;
+  }
+  
+  
+  @media (max-width:767px) {
+    .arsolaire__footer .item {
+      text-align:center;
+      padding-bottom:20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .arsolaire__footer .item.social {
+      text-align:center;
+    }
+  }
+  
+  .arsolaire__footer .item.social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin-left:10px;
+    margin-top:22px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .arsolaire__footer .item.social > a:hover {
+    opacity:0.9;
+  }
+  
+  @media (max-width:991px) {
+    .arsolaire__footer .item.social > a {
+      margin-top:40px;
+    }
+  }
+  
+  @media (max-width:767px) {
+    .arsolaire__footer .item.social > a {
+      margin-top:10px;
+    }
+  }
+  
+  .arsolaire__footer .copyright {
+    margin-top:14px;
+    margin-bottom:0;
+    font-size:13px;
+    opacity:0.6;
+  }
+  .copyright a {
+    color: white !important;
+    text-decoration: none !important;
+  }

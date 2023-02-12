@@ -1,0 +1,140 @@
+.dmt__about-header {
+    width: 100%;
+    height: 500px;
+    background-image: url('../../assets/learning.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dmt__about-header h1 {
+    font-family: var(--font-OS);
+    color: white;
+    font-weight: 800;
+    font-size: 3em;
+    letter-spacing: 3px;
+    padding-bottom: 3rem;
+}
+
+.dmt__about-mission {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-OS);
+    text-align: center;
+}
+
+.dmt__about-mission h2 {
+    font-size: 3em;
+    letter-spacing: 2px;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.dmt__about-mission p {
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+
+.dmt__about-mission img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.dmt__about-values {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.dmt__about-values_header {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/learning3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.dmt__about-values_header h2 {
+    font-family: var(--font-OS);
+    color: white;
+    font-weight: 800;
+    font-size: 3em;
+    letter-spacing: 3px;
+    padding-bottom: 3rem;
+}
+
+.dmt__about-values_content {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    align-items: center;
+    margin-top: -6rem;
+    padding: 2rem;
+}
+
+.dmt__about-values_content-item {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(97.81deg, rgba(132, 94, 194, 0.8) -27.32%, rgba(165, 93, 189, 0.8) -10.37%, rgba(193, 93, 181, 0.8) 5.88%, rgba(217, 95, 171, 0.8) 22.13%, rgba(236, 100, 160, 0.568) 81.97%, rgba(255, 138, 122, 0.48) 107.75%);
+    border-radius: 50px;
+}
+
+.dmt__about-values_content-item img {
+    max-width: 90px;
+}
+.dmt__about-trainers {
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    gap: 20px;
+}
+.dmt__about-trainers_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--font-OS);
+}
+.dmt__about-trainers_item img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+}
+.dmt__about-trainers_item h5 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-size: 2em;
+}
+.dmt__about-trainers_item p {
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,121 @@
+.dmt__training-header {
+    width: 100%;
+    height: 500px;
+    background-image: url('../../assets/trainings.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-left: 6rem;
+    font-family: var(--font-family);
+}
+
+.dmt__training-header h1 {
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 98px;
+    letter-spacing: 0.16em;
+    width: 40%;
+}
+.dmt__training-cat {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--font-family);
+    text-align: center;
+}
+.dmt__training-cat_items {
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.dmt__training-cat_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient);
+    padding: 2rem;
+    height: 100px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.dmt__training-cat_item:hover {
+    background: var(--color-main-light);
+}
+.dmt__training-cat_item:active {
+    background: var(--color-main-light);
+}
+.dmt__training-cat_item h5 {
+    color: white;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+.dmt__training-cat-head p {
+    font-size: 1.2em;
+    font-weight: 300;
+    text-align: center;
+}
+.dmt__training-cat-head h4 {
+    font-size: 3em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--color-main);
+}
+.dmt__training-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-family: var(--font-family);
+}
+
+.dmt__training-content_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px 0px;
+    border-style: solid;
+    border-color: #000000;
+    padding: 4rem 2rem;
+    text-align: center;
+
+}
+
+.dmt__training-content_item h2 {
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 68px;
+    letter-spacing: 0.16em;
+}
+
+.dmt__training-content_item h5 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.8em;
+    color: var(--color-main);
+}
+.dmt__training-content_item p {
+    font-family: var(--font-family);
+    width: 60%;
+    text-align: center;
+    font-weight: 300;
+    line-height: 27px;
+    letter-spacing: 0.31em;
+}

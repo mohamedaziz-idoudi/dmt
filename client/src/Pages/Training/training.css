@@ -1,0 +1,75 @@
+.dmt__training-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--font-family);
+    text-align: center;
+}
+.dmt__training-container_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.dmt__training-container_header img {
+    width: 645px;
+    height: 334px;
+    object-fit: contain;
+}
+
+.dmt__training-container_header h1 {
+    font-size: 3em;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.dmt__training-container_header h5 {
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: var(--color-main);
+}
+.dmt__training-dark_decoration {
+    width: 200px;
+    height: 5px;
+    background: rgb(90, 90, 90);
+}
+.dmt__training-container_content-item h4 {
+    font-weight: 800;
+    font-size: 1.2em;
+}
+.dmt__training-container_content-item p {
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+.dmt__training-container_sign {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 !important;
+    font-family: var(--font-family);
+}
+.dmt__training-container_sign-header {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/insc.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+}
+.dmt__training-container_sign-header h2 {
+    font-size: 3em;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
