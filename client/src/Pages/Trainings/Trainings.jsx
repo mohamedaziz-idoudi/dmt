@@ -7,13 +7,14 @@ const Trainings = () => {
   const [cats, setCats] = useState([{}])
   const [selectedCat, setSelectedCat] = useState();
   const [trainingList, setTrainingList] = useState([{}])
+  const [selection,setSelection] = useState(false);
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/getcats").then((data) => {
+    Axios.get("https://api.digimytch.com/api/getcats").then((data) => {
       setCats(data.data);
     })
   }, [])
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/gettrainings", { id: selectedCat }).then((data) => {
+    Axios.post("https://api.digimytch.com/api/gettrainings", { id: selectedCat }).then((data) => {
       setTrainingList(data.data);
     })
   }, [selectedCat])
@@ -24,7 +25,7 @@ const Trainings = () => {
       </div>
       <div className="dmt__training-cat section__padding">
         <div className="dmt__training-cat-head">
-          <h4>Nos Catégoriess</h4>
+          <h4>Nos Catégories</h4>
           <p>Veuillez choisir une catégorie</p>
         </div>
         <div className="dmt__training-cat_items">
@@ -33,6 +34,7 @@ const Trainings = () => {
               <div className="dmt__training-cat_item" key={key} onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                setSelection(true);
                 setSelectedCat(val.id);
               }}>
                 <h5>{val.cat_name}</h5>

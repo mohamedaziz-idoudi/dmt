@@ -45,10 +45,10 @@ const CRUD_TR = () => {
 
     useEffect((e) => {
         if (e && e.preventDefault()) { e.preventDefault() }
-        Axios.get("http://localhost:3001/api/getcats").then((data) => {
+        Axios.get("https://api.digimytch.com/api/getcats").then((data) => {
             setListCat(data.data);
         });
-        Axios.post("http://localhost:3001/api/gettrainings", { id: selectedCat.id }).then((response) => {
+        Axios.post("https://api.digimytch.com/api/gettrainings", { id: selectedCat.id }).then((response) => {
             setTrainingList(response.data);
         })
     }, [cats, trainings])
@@ -61,16 +61,16 @@ const CRUD_TR = () => {
         Axios.post("https://api.cloudinary.com/v1_1/dbx8tzoes/image/upload", formData).then(async (response) => {
             setEditPhoto(false);
             setSelectedTraining(prevState => ({ ...prevState, photo: response.data.secure_url }));
-            await Axios.post("http://localhost:3001/api/editphotoTR", { photo: response.data.secure_url, id: selectedTraining.id })
+            await Axios.post("https://api.digimytch.com/api/editphotoTR", { photo: response.data.secure_url, id: selectedTraining.id })
         })
     }
     const fetchCat = async () => {
-        Axios.get("http://localhost:3001/api/getcats").then((data) => {
+        Axios.get("https://api.digimytch.com/api/getcats").then((data) => {
             setListCat(data.data);
         })
     }
     const fetchTrainings = async () => {
-        Axios.post("http://localhost:3001/api/gettrainings", { id: selectedCat.id }).then((response) => {
+        Axios.post("https://api.digimytch.com/api/gettrainings", { id: selectedCat.id }).then((response) => {
             setTrainingList(response.data);
         })
     }
@@ -82,7 +82,7 @@ const CRUD_TR = () => {
         formData.append("file", photo);
         formData.append("upload_preset", "dmt_image-upload");
         Axios.post("https://api.cloudinary.com/v1_1/dbx8tzoes/image/upload", formData).then((response) => {
-            Axios.post("http://localhost:3001/api/post_training", { photo: response.data.secure_url, title: tname, desc: text, content: content, price: price, duration: duration, cat: selectedCat.id }).then(() => { setLoading(false); })
+            Axios.post("https://api.digimytch.com/api/post_training", { photo: response.data.secure_url, title: tname, desc: text, content: content, price: price, duration: duration, cat: selectedCat.id }).then(() => { setLoading(false); })
             setTrainings(true);
             setAddTraining(false);
             setCatEdit(true);
@@ -90,12 +90,12 @@ const CRUD_TR = () => {
         })
     }
     const update_content = () => {
-        Axios.post("http://localhost:3001/api/updatecont", { cont: cont, id: selectedTraining.id });
+        Axios.post("https://api.digimytch.com/api/updatecont", { cont: cont, id: selectedTraining.id });
         setSelectedTraining(prevState => ({ ...prevState, content: cont }));
         setEditCont(false);
     }
     const update_desc = () => {
-        Axios.post("http://localhost:3001/api/updatedes", { descr: des, id: selectedTraining.id });
+        Axios.post("https://api.digimytch.com/api/updatedes", { descr: des, id: selectedTraining.id });
         setSelectedTraining(prevState => ({ ...prevState, descr: des }));
         setEditDes(false);
     }
@@ -117,8 +117,8 @@ const CRUD_TR = () => {
                             }} />
                             <div className="dmt__gradient-button">
                                 <button onClick={() => {
-                                    Axios.post("http://localhost:3001/api/addcat", { name: name }).then(() => {
-                                        Axios.get("http://localhost:3001/api/getcats").then((data) => {
+                                    Axios.post("https://api.digimytch.com/api/addcat", { name: name }).then(() => {
+                                        Axios.get("https://api.digimytch.com/api/getcats").then((data) => {
                                             setListCat(data.data);
                                         })
                                     });
@@ -148,12 +148,12 @@ const CRUD_TR = () => {
                                                 e.stopPropagation();
                                                 setCatEdit(true);
                                                 setEdition(true);
-                                                Axios.post("http://localhost:3001/api/get_cat", { id: val.id }).then((data) => {
+                                                Axios.post("https://api.digimytch.com/api/get_cat", { id: val.id }).then((data) => {
                                                     setSelectedCat(data.data[0]);
                                                 })
                                             }} />
                                             <AiIcons.AiOutlineDelete className='table__icons-elt' onClick={() => {
-                                                Axios.post("http://localhost:3001/api/delete_cat", { id: val.id });
+                                                Axios.post("https://api.digimytch.com/api/delete_cat", { id: val.id });
                                                 fetchCat();
                                             }} /></th>
                                     </tr>
@@ -184,7 +184,7 @@ const CRUD_TR = () => {
                                 }} placeholder={selectedCat.cat_name} />
                                 <div className="dmt__gradient-button">
                                     <button onClick={() => {
-                                        Axios.post("http://localhost:3001/api/updatecat", { id: selectedCat.id, name: name });
+                                        Axios.post("https://api.digimytch.com/api/updatecat", { id: selectedCat.id, name: name });
                                         setSelectedCat(prevState => ({ ...prevState, cat_name: name }));
                                         setEdit(false);
                                     }}>Save</button>
@@ -225,12 +225,12 @@ const CRUD_TR = () => {
                                                 e.stopPropagation();
                                                 setTrainings(false);
                                                 setTrEdit(true);
-                                                Axios.post("http://localhost:3001/api/get_tr", { id: val.id }).then((data) => {
+                                                Axios.post("https://api.digimytch.com/api/get_tr", { id: val.id }).then((data) => {
                                                     setSelectedTraining(data.data[0]);
                                                 })
                                             }} />
                                             <AiIcons.AiOutlineDelete className='table__icons-elt' onClick={() => {
-                                                Axios.post("http://localhost:3001/api/delete_train", { id: val.id });
+                                                Axios.post("https://api.digimytch.com/api/delete_train", { id: val.id });
                                                 setDeleteFlag(true);
                                                 setTrainings(false);
                                             }} /></th>
@@ -267,7 +267,7 @@ const CRUD_TR = () => {
                             }} placeholder={selectedTraining.title} />
                             <div className="dmt__gradient-button">
                                 <button onClick={() => {
-                                    Axios.post("http://localhost:3001/api/updatetraining", { id: selectedTraining.id, title: title });
+                                    Axios.post("https://api.digimytch.com/api/updatetraining", { id: selectedTraining.id, title: title });
                                     setSelectedTraining(prevState => ({ ...prevState, title: title }));
                                     setEditTitle(false);
                                 }}>Save</button>
@@ -359,7 +359,7 @@ const CRUD_TR = () => {
                             }} placeholder={selectedTraining.price} />
                             <div className="dmt__gradient-button">
                                 <button onClick={() => {
-                                    Axios.post("http://localhost:3001/api/updateprice", { id: selectedTraining.id, price:nprice  });
+                                    Axios.post("https://api.digimytch.com/api/updateprice", { id: selectedTraining.id, price:nprice  });
                                     setSelectedTraining(prevState => ({ ...prevState, price:nprice }));
                                     setEditPrice(false);
                                 }}>Save</button>
@@ -383,7 +383,7 @@ const CRUD_TR = () => {
                             }} placeholder={selectedTraining.duration} />
                             <div className="dmt__gradient-button">
                                 <button onClick={() => {
-                                    Axios.post("http://localhost:3001/api/updatedur", { id: selectedTraining.id, duration:ndur  });
+                                    Axios.post("https://api.digimytch.com/api/updatedur", { id: selectedTraining.id, duration:ndur  });
                                     setSelectedTraining(prevState => ({ ...prevState, duration:ndur }));
                                     setEditDuration(false);
                                 }}>Save</button>

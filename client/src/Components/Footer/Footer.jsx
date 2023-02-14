@@ -18,7 +18,7 @@ const Footer = () => {
                             <h3>Contact</h3>
                             <p>N’hésitez pas à nous envoyer un mail pour toute demande de renseignement complémentaire</p>
                         </div>
-                        <div class="col-sm-4 col-md-3 item">
+                        <div class="col-sm-4 col-md-3 item footer_item">
                             <h3>Coordonnées</h3>
                             <div className="arsolaire__footer_line">
                                 <GoIcons.GoLocation className='footer__icon' />
@@ -34,7 +34,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-youtube"></i></a><a href="#"><i class="icon ion-social-instagram"></i><i class="icon ion:logo-tiktok"></i></a>
-                            <p class="copyright"><a href="https://www.facebook.com/profile.php?id=100085406739373" target="blank">© Created by MAW Digital - 2022</a></p>
+                            <p class="copyright"><a href="https://www.facebook.com/profile.php?id=100085406739373" target="blank">© Created by ONCA Solution - 2022</a></p>
                         </div>
                     </div>
                 </div>

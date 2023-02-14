@@ -1,7 +1,9 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { useNavigate } from 'react-router-dom';
 import './contact.css'
 const Contact = () => {
+  const navigate=useNavigate();
   const form = useRef();
   const ref_name = useRef(null);
   const ref_email = useRef(null);
@@ -25,6 +27,8 @@ const Contact = () => {
     ref_message.current.value = null;
     ref_subject.current.value = null;
     document.getElementById("notification").innerHTML = "Message sent successfully!";
+    navigate("/");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const [message, setMessage] = useState('');
   const [error, setError] = useState(null);

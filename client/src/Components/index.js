@@ -1,3 +1,5 @@
 export {default as Footer} from './Footer/Footer'
 export {default as Navbar} from './Nav/Navbar'
 export {default as CreateBlog} from './CreateBlog/CreateBlog'
+export {default as Form} from './Form/Form'
+export {default as Inscriptions} from './Inscriptions/Inscriptions'

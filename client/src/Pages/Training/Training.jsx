@@ -3,12 +3,13 @@ import { useParams } from 'react-router-dom'
 import Axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { Image } from 'cloudinary-react';
+import {Form} from '../../Components'
 import './training.css'
 const Training = () => {
     let { trainingID } = useParams();
     const [training, setTraining] = useState({});
     useEffect(() => {
-        Axios.get(`http://localhost:3001/api/getseltrain/${trainingID}`).then((data) => {
+        Axios.get(`https://api.digimytch.com/api/getseltrain/${trainingID}`).then((data) => {
             setTraining(data.data[0])
         })
     }, [])
@@ -41,7 +42,9 @@ const Training = () => {
                 <div className="dmt__training-container_sign-header">
                     <h2>Inscription</h2>
                 </div>
-
+                <div className="dmt__training-container_sign-form">
+                    <Form id={trainingID} />
+                </div>
             </div>
         </div >
     )

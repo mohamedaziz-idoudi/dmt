@@ -16,10 +16,9 @@
 
 .dmt__training-header h1 {
     font-weight: 800;
-    font-size: 72px;
-    line-height: 98px;
+    font-size: 4em;
     letter-spacing: 0.16em;
-    width: 40%;
+    text-align: center;
 }
 .dmt__training-cat {
     width: 100%;
@@ -52,13 +51,13 @@
 .dmt__training-cat_item:hover {
     background: var(--color-main-light);
 }
-.dmt__training-cat_item:active {
+.dmt__training-cat_item.active {
     background: var(--color-main-light);
 }
 .dmt__training-cat_item h5 {
     color: white;
     font-weight: 500;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 .dmt__training-cat-head p {
     font-size: 1.2em;
@@ -82,6 +81,7 @@
 
 .dmt__training-content_item {
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -108,14 +108,31 @@
     display: flex;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.8em;
+    letter-spacing: 3px;
     color: var(--color-main);
 }
 .dmt__training-content_item p {
     font-family: var(--font-family);
-    width: 60%;
+    width: 100%;
     text-align: center;
     font-weight: 300;
     line-height: 27px;
     letter-spacing: 0.31em;
+}
+@media (max-width:930px) {
+    .dmt__training-cat_items {
+        display: flex;
+        flex-direction: column;
+    }
+    .dmt__training-header h1 {
+        font-size: 2.5em;
+    }
+    .dmt__training-header {
+        padding-left: 1rem;
+    }
+}
+@media (max-width: 750px) {
+    .dmt__training-content {
+        padding: 1rem !important;
+    }
 }

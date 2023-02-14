@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react'
 import './App.css';
-import { About, Admin, Blogs, Contact, Home, Trainings,Dashboard, Training } from './Pages'
+import { About, Admin, Blogs, Contact, Home, Trainings,Dashboard, Training, Post } from './Pages'
 import { Navbar, Footer } from './Components';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
@@ -20,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path='/admin' element={<Admin setAuth={setAuth} />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:blogID" exact element={<Post />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/trainings" element={<Trainings />} />
             <Route path='/training/:trainingID' exact element={<Training />} />

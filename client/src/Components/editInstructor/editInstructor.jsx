@@ -14,7 +14,7 @@ class editInstructor extends React.Component {
     await e.stopPropagation();
     this.setState({edit: true});
     console.log(this.state.selectedIndex)
-    Axios.get("http://localhost:3001/api/get_instructor", { id: this.state.selectedIndex+1 }).then((data) => {
+    Axios.get("https://api.digimytch.com/api/get_instructor", { id: this.state.selectedIndex+1 }).then((data) => {
       this.setState({person : data.data[0]});
     })
   }

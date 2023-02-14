@@ -7,7 +7,7 @@ const Blogs = () => {
   const navigate = useNavigate();
   const [postList, setPostList] = useState([]);
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/getposts").then((data) => {
+    Axios.get("https://api.digimytch.com/api/getposts").then((data) => {
       setPostList(data.data);
     })
   },[])
@@ -20,7 +20,7 @@ const Blogs = () => {
               <h4>{new Date(val.date).toDateString()}</h4>
               <h2>{val.title}</h2>
               <p dangerouslySetInnerHTML={{ __html: val.paragraph.length > 250 ? val.paragraph.substring(0, 250) + "..." : val.paragraph }} />
-              <button>Read more</button>
+              <button onClick={()=> {navigate(`/blogs/${val.id}`)}}>Read more</button>
             </div>
             <Image
               cloudName="dbx8tzoes"

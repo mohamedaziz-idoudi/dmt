@@ -9,14 +9,23 @@ const bcrypt = require('bcrypt');
 const path = require('path');
 const fs = require('fs');
 
-
-
-const db= mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "password",
-    database: "dmt"
-})
+const db = mysql.createPool({
+    host: 'sql925.main-hosting.eu',
+    user: 'u951730070_dmt_admin',
+    database: 'u951730070_digimytch',
+    password: 'Password1',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+  });
+  
+  // test the connection
+  db.getConnection((err, connection) => {
+    if (err) throw err; // not connected!
+  
+    console.log('Connected as id ' + connection.threadId);
+    connection.release();
+  });
 
 app.use(cors());
 app.use(express.json());
@@ -274,6 +283,11 @@ app.post("/api/get_cat", (req,res)=> {
         res.send(result);
     })
 })
+app.get("/api/get_trainings",(req,res)=> {
+    db.query("SELECT * FROM trainings ORDER BY id DESC",(err,result)=> {
+        res.send(result);
+    })
+})
 app.post("/api/get_tr",(req,res)=> {
     const id=req.body.id;
     const query= "select * from trainings where id=?"
@@ -282,6 +296,33 @@ app.post("/api/get_tr",(req,res)=> {
             console.log(err);
         }
         res.send(result)
+    })
+})
+app.post("/api/get_s",(req,res)=> {
+    const id=req.body.id;
+    const query= "select * from signs where id=?"
+    db.query(query,[id],(err,result)=> {
+        if(err){
+            console.log(err);
+        }
+        res.send(result);
+    })
+})
+app.get("/api/getblog/:id", (req, res) => {
+    let id = req.params.id;
+    db.query("SELECT * FROM blogs WHERE id=?", id, (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+        res.send(result);
+    })
+});
+app.get("/api/getsigns",(req,res)=> {
+    db.query("SELECT * FROM signs order by id desc", (err,result)=> {
+        if(err){
+            console.log(err)
+        }
+        res.send(result);
     })
 })
 app.post("/api/addcat", (req,res)=> {
@@ -400,7 +441,7 @@ app.post("/api/post_training", (req,res)=> {
 })
 app.post("/api/gettrainings",(req,res)=> {
     const id=req.body.id
-    db.query("SELECT * FROM Trainings WHERE cat=? ",[id],(err,result)=> {
+    db.query("SELECT * FROM trainings WHERE cat=? ",[id],(err,result)=> {
         if(err) {
             console.log(err);
         }
@@ -412,6 +453,22 @@ app.get("/api/getseltrain/:trainingID",(req,res)=> {
     db.query("SELECT * FROM trainings WHERE id= ?",[id],(err,result)=> {
         if(err) {
             console.log(err)
+        }
+        res.send(result);
+    })
+})
+app.post("/api/signup",(req,res)=> {
+    const name = req.body.name;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const training = req.body.training;
+    const level = req.body.level;
+    const gender = req.body.gender;
+    const message = req.body.message;
+    const query = "INSERT INTO signs (nom,email,phone,lvl,gender,training,message) VALUES (?,?,?,?,?,?,?)"
+    db.query(query,[name,email,phone,level,gender,training,message],(err,result)=> {
+        if(err) {
+            console.log(err);
         }
         res.send(result);
     })

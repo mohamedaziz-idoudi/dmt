@@ -6,7 +6,7 @@ import ReactQuill from 'react-quill';
 import { Image } from 'cloudinary-react'
 import { useNavigate } from 'react-router-dom';
 import 'react-quill/dist/quill.snow.css';
-import { CreateBlog } from '../../Components';
+import { CreateBlog, Inscriptions } from '../../Components';
 import Axios from 'axios';
 import axios from 'axios';
 import logo from '../../assets/logo.png'
@@ -47,26 +47,26 @@ const Dashboard = ({ setAuth }) => {
   const changeName = async (e) => {
     await e.preventDefault();
     await e.stopPropagation();
-    Axios.post("http://localhost:3001/api/changename", { id: person.id, name: nname })
+    Axios.post("https://api.digimytch.com/api/changename", { id: person.id, name: nname })
     setPerson(prevState => ({ ...prevState, nom: nname }))
     setEditName(false);
   }
   const fetchCat = async () => {
-    Axios.get("http://localhost:3001/api/getcats").then((data) => {
+    Axios.get("https://api.digimytch.com/api/getcats").then((data) => {
       setListCat(data.data);
     })
   }
   const changeStat = async (e) => {
     await e.preventDefault();
     await e.stopPropagation();
-    Axios.post("http://localhost:3001/api/changestat", { id: person.id, stat: nstat });
+    Axios.post("https://api.digimytch.com/api/changestat", { id: person.id, stat: nstat });
     setPerson(prevState => ({ ...prevState, stat: nstat }));
     setEditStat(false);
   }
   useEffect((e) => {
     setAuth(true);
     if (e && e.preventDefault()) { e.preventDefault() }
-    Axios.get("http://localhost:3001/api/gettrainers").then((data) => {
+    Axios.get("https://api.digimytch.com/api/gettrainers").then((data) => {
       setTrainers(data.data);
     }, []);
     fetchCat();
@@ -81,13 +81,17 @@ const Dashboard = ({ setAuth }) => {
 
     Axios.post("https://api.cloudinary.com/v1_1/dbx8tzoes/image/upload", formData).then(async (response) => {
       console.log(response);
-      await e.preventDefault();
       await e.stopPropagation();
       await setAdd(false);
       await setVv(true);
-      axios.post("http://localhost:3001/api/addinstructor", { name: name, stat: stat, photo: response.data.secure_url }).then(() => {
+      axios.post("https://api.digimytch.com/api/addinstructor", { name: name, stat: stat, photo: response.data.secure_url }).then(() => {
         setLoadAdd(false);
+      }).then(() => {
+        Axios.get("https://api.digimytch.com/api/gettrainers").then((data) => {
+          setTrainers(data.data);
+        }, []);
       });
+
     })
   }
   const editPhoto = async () => {
@@ -99,7 +103,7 @@ const Dashboard = ({ setAuth }) => {
     Axios.post("https://api.cloudinary.com/v1_1/dbx8tzoes/image/upload", formData).then(async (response) => {
       setEditImage(false);
       setPerson(prevState => ({ ...prevState, photo: response.data.secure_url }));
-      await Axios.post("http://localhost:3001/api/editphoto", { photo: response.data.secure_url, id: person.id })
+      await Axios.post("https://api.digimytch.com/api/editphoto", { photo: response.data.secure_url, id: person.id })
       document.getElementById("notification_post").innerHTML = "Photo updated!";
     }).then(() => {
       setLoading(false);
@@ -128,6 +132,9 @@ const Dashboard = ({ setAuth }) => {
           )}
           {training && (
             <CRUD_TR />
+          )}
+          {sign && (
+            <Inscriptions />
           )}
           {
             instructor && (
@@ -198,15 +205,15 @@ const Dashboard = ({ setAuth }) => {
                                   await e.stopPropagation();
                                   setEdit(true);
                                   setLoading(false);
-                                  Axios.post("http://localhost:3001/api/get_instructor", { id: val.id }).then((data) => {
+                                  Axios.post("https://api.digimytch.com/api/get_instructor", { id: val.id }).then((data) => {
                                     setPerson(data.data[0]);
                                   })
                                 }} />
                                 <AiIcons.AiOutlineDelete className='table__icons-elt' onClick={async () => {
-                                  await axios.post("http://localhost:3001/api/deleteinstructor", { id: val.id }).then(() => {
+                                  await axios.post("https://api.digimytch.com/api/deleteinstructor", { id: val.id }).then(() => {
                                     setmodDel(true);
                                   });
-                                  Axios.get("http://localhost:3001/api/gettrainers").then((data) => {
+                                  Axios.get("https://api.digimytch.com/api/gettrainers").then((data) => {
                                     setTrainers(data.data);
                                   });
 

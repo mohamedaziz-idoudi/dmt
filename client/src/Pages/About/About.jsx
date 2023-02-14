@@ -12,10 +12,10 @@ import jane from '../../assets/jane.jpg';
 const About = () => {
   const [instructors, setInstructors] = useState([{}]);
   useEffect(() => {
-    axios.get("http://localhost:3001/api/gettrainers").then((data) => {
+    axios.get("https://api.digimytch.com/api/gettrainers").then((data) => {
       setInstructors(data.data)
     })
-  })
+  },[])
   return (
     <div className='dmt__about'>
       <div className="dmt__about-header">
@@ -23,8 +23,7 @@ const About = () => {
       </div>
       <div className="dmt__about-mission section__padding">
         <h2>En savoir plus sur notre mission</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>DIGIMYTCH est une plate-forme en ligne qui propose des cours de design et de marketing à toute personne désireuse d'apprendre des formateurs expérimentés, nous remodelons la façon dont les entreprises, les concepteurs et les spécialistes du marketing se correspondent. Notre plate-forme associera les recruteurs aux designers et aux spécialistes du marketing disposant de l'expertise et de la disponibilité appropriées. Nous aidons les recruteurs à embaucher les meilleurs en fonction de leurs compétences qui leur ont été enseignées par nos formateurs avec des cours en ligne payants et en perfectionnant ceux existants.</p>
         <img src={logo} alt="LOGO" />
       </div>
       <div className="dmt__about-values">
@@ -52,8 +51,7 @@ const About = () => {
       </div>
       <div className="dmt__about-mission section__padding">
         <h2>Notre Vision</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Ce sera la solution pour faire partager à la communauté ses compétences et apprendre aux gens la manière 100% pratique (avec de vrais projets) d'avoir un métier de designer ou de marketeur dans une entreprise, pas seulement théorique. Ce sera le guichet unique pour tous les recruteurs à la recherche de candidats compétents et qualifiés pour leur poste de conception ou de marketing.</p>
       </div>
       <div className="dmt__about-mission section__padding">
         <h2>Notre Equipe</h2>

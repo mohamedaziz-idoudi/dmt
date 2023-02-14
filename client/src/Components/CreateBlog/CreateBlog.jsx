@@ -20,7 +20,7 @@ const CreateBlog = () => {
             await e.preventDefault();
             await e.stopPropagation();
             setVafter(true);
-            axios.post("http://localhost:3001/api/post", { title: title, paragraph: text, image: response.data.secure_url, video: video }).then(() => {
+            axios.post("https://api.digimytch.com/api/post", { title: title, paragraph: text, image: response.data.secure_url, video: video }).then(() => {
                 setBlogs(false);
             });
         })

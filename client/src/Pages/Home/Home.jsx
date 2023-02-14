@@ -7,9 +7,13 @@ import gal from '../../assets/learning.jpg'
 const Home = () => {
   const navigate = useNavigate();
   const [postList, setPostList] = useState({});
+  const [training, setTraining] = useState({});
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/getposts").then((data) => {
+    Axios.get("https://api.digimytch.com/api/getposts").then((data) => {
       setPostList(data.data[0]);
+    })
+    Axios.get("https://api.digimytch.com/api/get_trainings").then((data)=> {
+      setTraining(data.data[0]);
     })
   },[])
   return (
@@ -20,21 +24,22 @@ const Home = () => {
             <h1>Découvrez nos dernières formations publiées</h1>
           </div>
           <div className="dmt__home-header_content-right">
-            <h2>Nom de Formation</h2>
-            <h5>Du jj/mm au jj/mm</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+            <h2>{training.title}</h2>
+            <h5>{training.duration}</h5>
+            <p id='paragraph_tr' dangerouslySetInnerHTML={{__html: training.descr?.substr(0,350) + '...'}} />
             <div className="dmt__button-white">
-              <button>Savoir Plus</button>
+              <button onClick={()=> {navigate(`/training/${training.id}`); window.scrollTo({ top: 0, behavior: "smooth" })}}>Savoir Plus</button>
             </div>
           </div>
         </div>
       </div>
       <div className="dmt__about-mission section__padding">
         <h2>Découvrez notre dernier article</h2>
+        
         <h4>{postList.title}</h4>
         <p id='latest_date'>{new Date(postList.date).toDateString()}</p>
         <div className="dmt__gradient-button">
-          <button>Read more</button>
+          <button onClick={()=> {navigate(`/blogs/${postList.id}`); window.scrollTo({ top: 0, behavior: "smooth" })}}>Read more</button>
         </div>
       </div>
       <div className="dmt__about-mission section__padding">
@@ -51,7 +56,7 @@ const Home = () => {
           <div className="dmt__home-feedbacks_content-item">
             <div className="dmt__home-feedbacks_content-item_left">
               <img src={placeholder} alt="PlaceHolder" />
-              <h5>Firstname,Lastname</h5>
+              <h5>Firstname, Lastname</h5>
             </div>
             <div className="dmt__home-feedbacks_content-item_middle"></div>
             <div className="dmt__home-feedbacks_content-item_right">
@@ -61,7 +66,7 @@ const Home = () => {
           <div className="dmt__home-feedbacks_content-item">
             <div className="dmt__home-feedbacks_content-item_left">
               <img src={placeholder} alt="PlaceHolder" />
-              <h5>Firstname,Lastname</h5>
+              <h5>Firstname, Lastname</h5>
             </div>
             <div className="dmt__home-feedbacks_content-item_middle"></div>
             <div className="dmt__home-feedbacks_content-item_right">
@@ -71,7 +76,7 @@ const Home = () => {
           <div className="dmt__home-feedbacks_content-item">
             <div className="dmt__home-feedbacks_content-item_left">
               <img src={placeholder} alt="PlaceHolder" />
-              <h5>Firstname,Lastname</h5>
+              <h5>Firstname, Lastname</h5>
             </div>
             <div className="dmt__home-feedbacks_content-item_middle"></div>
             <div className="dmt__home-feedbacks_content-item_right">
@@ -81,7 +86,7 @@ const Home = () => {
           <div className="dmt__home-feedbacks_content-item">
             <div className="dmt__home-feedbacks_content-item_left">
               <img src={placeholder} alt="PlaceHolder" />
-              <h5>Firstname,Lastname</h5>
+              <h5>Firstname, Lastname</h5>
             </div>
             <div className="dmt__home-feedbacks_content-item_middle"></div>
             <div className="dmt__home-feedbacks_content-item_right">
@@ -92,31 +97,9 @@ const Home = () => {
       </div>
       <div className="dmt__about-mission section__padding">
         <h2>Savoir plus à propos de nous</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor...</p>
+        <p>DIGIMYTCH est une plate-forme en ligne qui propose des cours de design et de marketing à toute personne désireuse d'apprendre des formateurs expérimentés, nous remodelons la façon dont les entreprises, les concepteurs et les spécialistes du marketing se correspondent. Notre plateforme mettra en relation les recruteurs avec les designers et...</p>
         <div className="dmt__gradient-button">
-          <button>Read more</button>
-        </div>
-      </div>
-      <div className="dmt__home-gallery">
-        <div className="dmt__home-gallery_element">
-          <div className="dmt__home-gallery_element-images">
-            <div className="dmt__home-gallery_top">
-              <img src={gal} alt="Image" />
-              <img src={gal} alt="Image" />
-            </div>
-            <div className="dmt__home-gallery_buttom">
-              <img src={gal} alt="Image" />
-              <img src={gal} alt="Image" />
-            </div>
-          </div>
-
-        </div>
-        <div className="dmt__home-gallery_element-title gradient__text">
-          <h2>Gallery</h2>
-        </div>
-        <div className="dmt__home-gallery_paragraph">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <button onClick={()=> {navigate("/about");window.scrollTo({ top: 0, behavior: "smooth" });}}>Read more</button>
         </div>
       </div>
     </div>

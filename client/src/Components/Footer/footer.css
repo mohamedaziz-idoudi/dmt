@@ -13,7 +13,12 @@
     font-weight:bold;
     font-size:16px;
   }
-  
+  .footer_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
   .arsolaire__footer ul {
     padding:0;
     list-style:none;
