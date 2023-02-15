@@ -49,9 +49,11 @@
     font-size: 16px;
     line-height: 22px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     letter-spacing: 0.16em;
     max-width: 500px;
+    width: 100%;
 
 }
 
