@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CRUD_TR from './Pages/CRUD_TR/CRUD_TR';
 function App() {
   const ThemeContext = createContext(null);
-  const [isAuth, setAuth] = useState(true);
+  const [isAuth, setAuth] = useState(false);
   return (
     <div className="App">
       <BrowserRouter>
