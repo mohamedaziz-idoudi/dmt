@@ -73,3 +73,18 @@
     width: 90%;
     max-width: 400px;
 }
+@media (max-width: 950px) {
+    .dmt__blogs-item {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+@media (max-width:690px) {
+    .blogs__container-post_caption h2 {
+        font-size: 2em;
+    }
+    .dmt__blogs {
+        padding: 4rem 1rem !important;
+    }
+}
