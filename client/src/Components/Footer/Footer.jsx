@@ -33,7 +33,7 @@ const Footer = () => {
                                 <p id='footer_email'>digimytch@gmail.com</p>
                             </div>
                         </div>
-                        <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-youtube"></i></a><a href="#"><i class="icon ion-social-instagram"></i><i class="icon ion:logo-tiktok"></i></a>
+                        <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-youtube"></i></a><a href="https://www.tiktok.com/@digimitch" target="_blank" rel="noreferrer"><i class="icon ion-social-instagram"></i><i class="icon ion-social-tiktok">TikTok</i></a>
                             <p class="copyright"><a href="https://www.facebook.com/profile.php?id=100085406739373" target="blank">© Created by ONCA Solution - 2022</a></p>
                         </div>
                     </div>

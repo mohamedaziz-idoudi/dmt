@@ -11,7 +11,9 @@
     align-items: center;
     padding: 6rem 4rem;
 }
-
+.dmt__about-mission img {
+    width: 350px;
+}
 .dmt__home-header_content {
     display: flex;
     flex-direction: row;

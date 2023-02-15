@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './home.css'
 import placeholder from '../../assets/john doe.jpg'
 import gal from '../../assets/learning.jpg'
+import part from '../../assets/LOGO PRINCIPAL.png'
 const Home = () => {
   const navigate = useNavigate();
   const [postList, setPostList] = useState({});
@@ -101,6 +102,10 @@ const Home = () => {
         <div className="dmt__gradient-button">
           <button onClick={()=> {navigate("/about");window.scrollTo({ top: 0, behavior: "smooth" });}}>Read more</button>
         </div>
+      </div>
+      <div className="dmt__about-mission section__padding">
+        <h2>Nos Partenaires</h2>
+        <img src={part} alt="Partenaire" />
       </div>
     </div>
   )
