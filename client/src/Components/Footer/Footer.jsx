@@ -22,15 +22,15 @@ const Footer = () => {
                             <h3>Coordonnées</h3>
                             <div className="arsolaire__footer_line">
                                 <GoIcons.GoLocation className='footer__icon' />
-                                <p>N°, Street Name, Region Mail Code City, Country</p>
+                                <p>13 rue de Taher Memmi Menzah 6 Ariana</p>
                             </div>
                             <div className="arsolaire__footer_line">
                                 <AiIcons.AiFillPhone className='footer__icon' />
-                                <p>(+216) 99 999 999</p>
+                                <p>(+216) 94881032</p>
                             </div>
                             <div className="arsolaire__footer_line">
                                 <GoIcons.GoMail className='footer__icon' />
-                                <p id='footer_email'>email.email@email.com</p>
+                                <p id='footer_email'>digimytch@gmail.com</p>
                             </div>
                         </div>
                         <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-youtube"></i></a><a href="#"><i class="icon ion-social-instagram"></i><i class="icon ion:logo-tiktok"></i></a>
