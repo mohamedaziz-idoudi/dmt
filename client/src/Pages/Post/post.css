@@ -110,4 +110,7 @@
     .single__content {
         padding: 1rem !important;
     }
+    .post__header h1 {
+        font-size: 2em;
+    }
 }
