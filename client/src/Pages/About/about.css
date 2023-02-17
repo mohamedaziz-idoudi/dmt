@@ -120,11 +120,15 @@
     align-items: center;
     gap: 20px;
     font-family: var(--font-OS);
+    width: 100%;
+    padding: 2rem;
 }
 .dmt__about-trainers_item img {
-    max-width: 200px;
-    max-height: 200px;
+    width: 200px;
     border-radius: 50%;
+}
+.dmt__about-trainers_item-paragraph {
+    width: 200px;
 }
 .dmt__about-trainers_item h5 {
     background: var(--gradient);
@@ -138,4 +142,19 @@
     font-weight: 300;
     font-style: normal;
     letter-spacing: 1px;
+}
+@media (max-width:1050px){
+    .dmt__about-trainers {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width:700px){
+    .dmt__about-trainers_item {
+        padding: 1rem 0;
+        flex-direction: column;
+    }
+    .dmt__about-trainers {
+        padding: 1rem !important;
+    }
 }

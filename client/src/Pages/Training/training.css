@@ -18,6 +18,7 @@
 }
 .dmt__training-container_header img {
     width: 80%;
+    max-width: 300px;
     object-fit: contain;
 }
 
