@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3a74cf62.css",
+    "main.js": "/static/js/main.a7d87e36.js",
+    "static/media/bg.png": "/static/media/bg.1448176c55ea17a3b719.png",
+    "static/media/admin.jpg": "/static/media/admin.cc139e0ad300426a076f.jpg",
+    "static/media/learning3.jpg": "/static/media/learning3.3e15bb551715af0c9ab6.jpg",
+    "static/media/Fichier 2.png": "/static/media/Fichier 2.463c163972faf9cf34fc.png",
+    "static/media/trainings.jpg": "/static/media/trainings.34cf654dd47483036df1.jpg",
+    "static/media/contact.jpg": "/static/media/contact.1052c3e8fe348e80965b.jpg",
+    "static/media/dashboard.jpg": "/static/media/dashboard.534538e9ad9f51533ce6.jpg",
+    "static/media/feedback.jpg": "/static/media/feedback.e5d474b7ca857c61c38f.jpg",
+    "static/media/learning.jpg": "/static/media/learning.7c66a6f214d6ff84f82a.jpg",
+    "static/media/logostudentplus.png": "/static/media/logostudentplus.526e8b1063d6a4ffb34c.png",
+    "static/media/LOGO PRINCIPAL.png": "/static/media/LOGO PRINCIPAL.61731aad28ac34573867.png",
+    "static/media/insc.jpg": "/static/media/insc.25acc17b626f97d2243d.jpg",
+    "static/media/gold.png": "/static/media/gold.7aec0360ed1836891337.png",
+    "static/media/logo.png": "/static/media/logo.5747e4ccb31e8c2941fe.png",
+    "static/media/deal.png": "/static/media/deal.ca928e1f16048b227f10.png",
+    "static/media/community (1).png": "/static/media/community (1).8948f00640f60cb92ed0.png",
+    "static/media/teamwork.png": "/static/media/teamwork.148b892da4f14cff8f8a.png",
+    "static/media/john doe.jpg": "/static/media/john doe.8f08bd773c113142b8fb.jpg",
+    "static/media/fst.png": "/static/media/fst.045403e9fe1abf76c41e.png",
+    "index.html": "/index.html",
+    "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "main.3a74cf62.css.map": "/static/css/main.3a74cf62.css.map",
+    "main.a7d87e36.js.map": "/static/js/main.a7d87e36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a74cf62.css",
+    "static/js/main.a7d87e36.js"
+  ]
+}

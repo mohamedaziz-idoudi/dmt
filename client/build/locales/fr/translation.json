@@ -1,0 +1,74 @@
+{
+    "home": {
+        "header": {
+            "title": "Découvrez nos dernières formations publiées",
+            "button": "Savoir Plus"
+        },
+        "headlights": {
+            "blogs": "Découvrez notre dernier article",
+            "button": "Savoir Plus",
+            "contact": "Besoin de nous contacter?",
+            "contact_button": "Contactez Nous"
+        }, 
+        "feedbacks": {
+            "eya": "Etudiante et fondatrice de ",
+            "imen":"Etudiante en marketing "
+        },
+        "plus": {
+            "title": "Savoir plus à propos de nous",
+            "content": "DIGIMYTCH est une plate-forme en ligne qui propose des cours de design et de marketing à toute personne désireuse d'apprendre des formateurs expérimentés, nous remodelons la façon dont les entreprises, les concepteurs et les spécialistes du marketing se correspondent. Notre plateforme mettra en relation les recruteurs avec les designers et...",
+            "button": "Savoir Plus"
+        },
+        "partners": "Nos Partenaires"
+    },
+    "navbar" :{
+        "home": "Accueil",
+        "about": "A Propos+",
+        "tr": "Formations",
+        "contact": "Contactez Nous"
+    },
+    "about": {
+        "title": "A Propos de nous",
+        "section_title": "En Savoir plus sur notre mission",
+        "section_content": "DIGIMYTCH est une plate-forme en ligne qui propose des cours de design et de marketing à toute personne désireuse d'apprendre des formateurs expérimentés, nous remodelons la façon dont les entreprises, les concepteurs et les spécialistes du marketing se correspondent. Notre plate-forme associera les recruteurs aux designers et aux spécialistes du marketing disposant de l'expertise et de la disponibilité appropriées. Nous aidons les recruteurs à embaucher les meilleurs en fonction de leurs compétences qui leur ont été enseignées par nos formateurs avec des cours en ligne payants et en perfectionnant ceux existants.",
+        "vtitle": "Nos Valeurs",
+        "comm": "Communauté",
+        "team": "Travail en équipe",
+        "partage": "Partage",
+        "eng": "Engagement",
+        "vision_title": "Notre Vision",
+        "vision_content": "Ce sera la solution pour faire partager à la communauté ses compétences et apprendre aux gens la manière 100% pratique (avec de vrais projets) d'avoir un métier de designer ou de marketeur dans une entreprise, pas seulement théorique. Ce sera le guichet unique pour tous les recruteurs à la recherche de candidats compétents et qualifiés pour leur poste de conception ou de marketing.",
+        "inst": "Notre Equipe"
+    },
+    "training": {
+        "title": "Nos Formations",
+        "cat": "Nos Catégories",
+        "cat_cap": "Veuillez choisir une catégorie",
+        "button": "Savoir Plus"
+    },
+    "blogs": "Lire",
+    "footer": {
+        "contact": "N’hésitez pas à nous envoyer un mail pour toute demande de renseignement complémentaire",
+        "coor": "Coordonnées",
+        "address": "13 Rue de Taher Memmi Menzah 6 Ariana"
+    },
+    "contact": {
+        "name": "Nom et Prénom",
+        "email": "Adresse Electronique",
+        "phone": "Numero de téléphone",
+        "sub": "Sujet",
+        "pname": "Votre nom",
+        "pemail": "Veuillez saisir votre email",
+        "pphone": "Veullez saisir votre numéro",
+        "psub": "Saisir votre sujet",
+        "pmessage": "Saisir votre message",
+        "button": "Envoyer"
+    },
+    "form": {
+        "header": "Succès!",
+        "body": "Vous avez réussi à vous inscrire à la formation",
+        "button": "Consultez notre catalogue de formations",
+        "level": "Level",
+        "add": "Additional Message"
+    }
+}
