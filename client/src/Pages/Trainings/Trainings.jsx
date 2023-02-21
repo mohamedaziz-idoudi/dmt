@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import { useTranslation } from 'react-i18next';
 import './trainings.css'
 const Trainings = () => {
+  const {t} = useTranslation();
   const navigate = useNavigate();
   const [cats, setCats] = useState([{}])
   const [selectedCat, setSelectedCat] = useState();
@@ -21,12 +23,12 @@ const Trainings = () => {
   return (
     <div className='dmt__training'>
       <div className="dmt__training-header">
-        <h1 className='gradient__text'>Nos Formations</h1>
+        <h1 className='gradient__text'>{t('training.title')}</h1>
       </div>
       <div className="dmt__training-cat section__padding">
         <div className="dmt__training-cat-head">
-          <h4>Nos Catégories</h4>
-          <p>Veuillez choisir une catégorie</p>
+          <h4>{t('training.cat')}</h4>
+          <p>{t('training.cat_cap')}</p>
         </div>
         <div className="dmt__training-cat_items">
           {cats.map((val, key) => {
@@ -51,7 +53,7 @@ const Trainings = () => {
               <h5>{val.duration}</h5>
               <p dangerouslySetInnerHTML={{__html: val.descr?.length > 250 ? val.descr.substring(0,250) + "..." : val.descr  + "..." }} />
               <div className="dmt__gradient-button">
-                <button onClick={()=> {navigate(`/training/${val.id}`);window.scrollTo({ top: 0, behavior: "smooth" })}}>Savoir Plus</button>
+                <button onClick={()=> {navigate(`/training/${val.id}`);window.scrollTo({ top: 0, behavior: "smooth" })}}>{t('training.button')}</button>
               </div>
             </div>
           )

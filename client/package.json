@@ -11,12 +11,17 @@
     "bootstrap": "^5.2.3",
     "cloudinary": "^1.33.0",
     "cloudinary-react": "^1.8.1",
+    "i18next": "^22.4.10",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.1.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-datepicker": "^4.10.0",
     "react-dom": "^18.2.0",
     "react-floating-whatsapp": "^5.0.8",
+    "react-i18next": "^12.1.5",
     "react-icons": "^4.7.1",
+    "react-loading-screen": "^0.0.17",
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
@@ -45,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/react": "^4.1.0"
   }
 }

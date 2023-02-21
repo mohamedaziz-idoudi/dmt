@@ -16,7 +16,6 @@
     
  
 }
-
 .dmt__navbar.active{  
     height: 60px;
     background-color: white;
@@ -45,6 +44,21 @@
 .dmt__navbar-links_logo
 {
     margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.language_selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    text-align: center;
+}
+.language_selector option {
+    text-align: center;
 }
 .dmt__navbar .dmt__navbar-links_logo img{
     width: 184.87px;

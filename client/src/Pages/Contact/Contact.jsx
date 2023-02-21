@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './contact.css'
 const Contact = () => {
+  const {t} = useTranslation();
   const navigate=useNavigate();
   const form = useRef();
   const ref_name = useRef(null);
@@ -56,44 +58,44 @@ const Contact = () => {
           <div class="formbold-form-wrapper">
             <form ref={form} onSubmit={sendEmail}>
               <div class="formbold-mb-5">
-                <label for="name" class="formbold-form-label"> Nom et Prénom </label>
+                <label for="name" class="formbold-form-label"> {t('contact.name')} </label>
                 <input
                   type="text" name="user_name" ref={ref_name}
                   id="name"
-                  placeholder="Full Name"
+                  placeholder={t("contact.pname")}
                   class="formbold-form-input"
                 />
               </div>
 
               <div class="formbold-mb-5">
-                <label for="email" class="formbold-form-label"> Adresse Electronique </label>
+                <label for="email" class="formbold-form-label"> {t('contact.email')} </label>
                 <input
                   type="email" value={message}
                   onChange={handleChange} name="user_email" ref={ref_email}
                   id="email"
-                  placeholder="Enter your email"
+                  placeholder={t('contact.pemail')}
                   class="formbold-form-input"
                 />
                 {error && <p style={{color: 'red'}}>{error}</p>}
               </div>
               <div class="formbold-mb-5">
-                <label for="email" class="formbold-form-label"> Numero de téléphone </label>
+                <label for="email" class="formbold-form-label"> {t('contact.phone')} </label>
                 <input
                   type="tel" pattern="^[0-9]{3,45}$" name='user_phone' ref={ref_phone}
                   id="tel"
-                  placeholder="Enter your Phone Number"
+                  placeholder={t('contact.pphone')}
                   class="formbold-form-input"
                 />
               </div>
 
               <div class="formbold-mb-5">
-                <label for="subject" class="formbold-form-label"> Sujet </label>
+                <label for="subject" class="formbold-form-label"> {t('contact.sub')} </label>
                 <input
                   type="text"
                   name="subject"
                   ref={ref_subject}
                   id="subject"
-                  placeholder="Enter your subject"
+                  placeholder={t('contact.psub')}
                   class="formbold-form-input"
                 />
               </div>
@@ -105,13 +107,13 @@ const Contact = () => {
                   name="message" 
                   ref={ref_message}
                   id="message"
-                  placeholder="Type your message"
+                  placeholder={t('contact.pmessage')}
                   class="formbold-form-input"
                 ></textarea>
               </div>
 
               <div>
-                <input type="submit" class="formbold-btn" value="Envoyer" />
+                <input type="submit" class="formbold-btn" value={t('contact.button')}/>
                 <p id='notification'></p>
               </div>
             </form>

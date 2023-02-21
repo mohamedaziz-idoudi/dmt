@@ -7,9 +7,9 @@ import deal from '../../assets/deal.png'
 import community from '../../assets/community (1).png'
 import sharing from '../../assets/send.png'
 import teamwork from '../../assets/teamwork.png'
-import john from '../../assets/john.jpg';
-import jane from '../../assets/jane.jpg';
+import { useTranslation } from 'react-i18next';
 const About = () => {
+  const {t} = useTranslation();
   const [instructors, setInstructors] = useState([{}]);
   useEffect(() => {
     axios.get("https://api.digimytch.com/api/gettrainers").then((data) => {
@@ -19,42 +19,42 @@ const About = () => {
   return (
     <div className='dmt__about'>
       <div className="dmt__about-header">
-        <h1>A propos de nous</h1>
+        <h1>{t('about.title')}</h1>
       </div>
       <div className="dmt__about-mission section__padding">
-        <h2>En savoir plus sur notre mission</h2>
-        <p>DIGIMYTCH est une plate-forme en ligne qui propose des cours de design et de marketing à toute personne désireuse d'apprendre des formateurs expérimentés, nous remodelons la façon dont les entreprises, les concepteurs et les spécialistes du marketing se correspondent. Notre plate-forme associera les recruteurs aux designers et aux spécialistes du marketing disposant de l'expertise et de la disponibilité appropriées. Nous aidons les recruteurs à embaucher les meilleurs en fonction de leurs compétences qui leur ont été enseignées par nos formateurs avec des cours en ligne payants et en perfectionnant ceux existants.</p>
+        <h2>{t('about.section_title')}</h2>
+        <p>{t('about.section_content')}</p>
         <img src={logo} alt="LOGO" />
       </div>
       <div className="dmt__about-values">
         <div className="dmt__about-values_header">
-          <h2>Nos Valeurs</h2>
+          <h2>{t('about.vtitle')}</h2>
         </div>
         <div className="dmt__about-values_content">
           <div className="dmt__about-values_content-item">
             <img src={community} alt="Community" />
-            <h4>Communauté</h4>
+            <h4>{t('about.comm')}</h4>
           </div>
           <div className="dmt__about-values_content-item">
             <img src={teamwork} alt="Teamwork" />
-            <h4>Travail en équipe</h4>
+            <h4>{t('about.team')}</h4>
           </div>
           <div className="dmt__about-values_content-item">
             <img src={sharing} alt="Sharing" />
-            <h4>Partage</h4>
+            <h4>{t('about.partage')}</h4>
           </div>
           <div className="dmt__about-values_content-item">
             <img src={deal} alt="Commitment" />
-            <h4>Engagement</h4>
+            <h4>{t('about.eng')}</h4>
           </div>
         </div>
       </div>
       <div className="dmt__about-mission section__padding">
-        <h2>Notre Vision</h2>
-        <p>Ce sera la solution pour faire partager à la communauté ses compétences et apprendre aux gens la manière 100% pratique (avec de vrais projets) d'avoir un métier de designer ou de marketeur dans une entreprise, pas seulement théorique. Ce sera le guichet unique pour tous les recruteurs à la recherche de candidats compétents et qualifiés pour leur poste de conception ou de marketing.</p>
+        <h2>{t('about.vision_title')}</h2>
+        <p>{t('about.vision_content')}</p>
       </div>
       <div className="dmt__about-mission section__padding">
-        <h2>Notre Equipe</h2>
+        <h2>{t('about.inst')}</h2>
         <div className="dmt__about-trainers section__padding">
           {instructors.map((val, key) => {
             return (

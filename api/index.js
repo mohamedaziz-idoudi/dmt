@@ -10,21 +10,13 @@ const path = require('path');
 const fs = require('fs');
 
 const db = mysql.createPool({
-    host: 'sql925.main-hosting.eu',
-    user: 'u951730070_dmt_admin',
+    host: '185.77.96.207',
+    user: 'dmt_admin',
     database: 'u951730070_digimytch',
-    password: 'Password1',
+    password: 'password123',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
-  });
-  
-  // test the connection
-  db.getConnection((err, connection) => {
-    if (err) throw err; // not connected!
-  
-    console.log('Connected as id ' + connection.threadId);
-    connection.release();
   });
 
 app.use(cors());
@@ -48,7 +40,6 @@ app.get("/api/login", (req, res) => {
     const sql = "select * FROM users WHERE login = ?";
     const password = req.query.pass;
     db.query(sql,[req.query.user], (err, response) => {
-        console.log(response[0].password);
         bcrypt.compare(password, response[0].password).then(function (result) {
             res.send(result);
         });
@@ -56,93 +47,6 @@ app.get("/api/login", (req, res) => {
     })
 })
 
-app.get('/api/get_cus', (req, res) => {
-    db.query("SELECT * FROM customer_messages ORDER BY id DESC", (err, response) => {
-        if (err) {
-            console.log(err);
-        }
-        res.send(response);
-    })
-});
-app.get('/api/get_bus', (req, res) => {
-    db.query("SELECT * FROM business_messages", (err, response) => {
-        if (err) {
-            console.log(err);
-        }
-        res.send(response);
-    })
-})
-
-app.get('/api/getbusfields', (req, res) => {
-    db.query("SHOW columns FROM business_messages", (err, response) => {
-        if (err) {
-            console.log(err)
-        }
-        res.send(response);
-    })
-})
-app.get('/api/getcusfields', (req, res) => {
-    db.query('SHOW columns FROM customer_messages', (err, response) => {
-        if (err) {
-            console.log(err)
-        }
-        res.send(response);
-    })
-})
-
-app.post("/api/insert_customer", (req, res) => {
-    const name = req.body.name;
-    const email = req.body.email;
-    const phone = req.body.phone;
-    const message = req.body.message;
-    const lodgingType = req.body.lodgingType;
-    const nb_stars = req.body.nb_stars;
-    const resort = req.body.resort;
-    const nb_rooms = req.body.nb_rooms;
-    const nb_persons = req.body.nb_persons;
-    const sqlInsert = "INSERT INTO customer_messages (name,email,phone,type_lodging, nb_stars, resort, nb_rooms, nb_persons, message) VALUES (?,?,?,?,?,?,?,?,?)"
-    db.query(sqlInsert, [name, email, phone, lodgingType, nb_stars, resort, nb_rooms, nb_persons, message], (err, result) => {
-        console.log(result);
-    })
-})
-
-app.post("/api/insert_business", (req, res) => {
-    const name = req.body.name;
-    const email = req.body.email;
-    const phone = req.body.phone;
-    const bname = req.body.bname;
-    const bemail = req.body.bemail;
-    const bphone = req.body.bphone;
-    const work = req.body.work;
-    const message = req.body.message;
-    const sqlInsert = "INSERT INTO business_messages (personal_name, personal_email, personal_phone, business_name, business_email, business_phone, business_desc, message) VALUES (?,?,?,?,?,?,?,?)";
-    db.query(sqlInsert, [name, email, phone, bname, bemail, bphone, work, message], (err, response) => {
-        console.log(response);
-    })
-
-})
-
-const storage = multer.diskStorage({
-    destination: (req, file, callBack) => {
-        callBack(null, '../client/public/uploads')
-    },
-    filename: (req, file, callBack) => {
-        callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-
-    }
-})
-
-const upload = multer({
-    storage: storage
-});
-
-
-//@type   POST
-//route for post data
-app.post("/api/upload", upload.single('file'), (req, res) => {
-    const file = req.file;
-    res.send(file.filename);
-});
 app.post("/api/post", (req, res) => {
     const title = req.body.title;
     const paragraph = req.body.paragraph;
@@ -168,24 +72,6 @@ app.get("/api/getPost/:id", (req, res) => {
         res.send(result);
     })
 });
-app.get("/api/getops", (req, res) => {
-    db.query("SELECT * FROM esthetique", (err, result) => {
-        if (err) {
-            console.log(err);
-        }
-        res.send(result);
-    })
-})
-app.get("/api/sum_ops", (req, res) => {
-    let operations = req.query.operations;
-    let query = "SELECT SUM(prix) sum from esthetique WHERE id IN (?)";
-    db.query(query, [operations], (err, result) => {
-        if (err) {
-            console.log(err);
-        }
-        res.send(result);
-    })
-})
 app.get("/api/gettrainers",(req,res)=> {
     const query = "SELECT * FROM instructors"
     db.query(query,((err,data)=> {

@@ -38,11 +38,8 @@ const Dashboard = ({ setAuth }) => {
   const [loadAdd, setLoadAdd] = useState(false);
   const [modDel, setmodDel] = useState(false);
   const [addCat, setAddCat] = useState(false);
-  const [editCat, setEditCat] = useState(false);
+  const [delIns,setDelIns] = useState(false);
   const [listCat, setListCat] = useState([{}]);
-  const [catEdit, setCatEdit] = useState(false);
-  const [edition, setEdition] = useState(false);
-  const [selectedCat, setSelectedCat] = useState({});
 
   const changeName = async (e) => {
     await e.preventDefault();
@@ -71,7 +68,7 @@ const Dashboard = ({ setAuth }) => {
     }, []);
     fetchCat();
 
-  }, [addCat]);
+  }, [add]);
 
   const addInstructor = (e) => {
     setLoadAdd(true);
@@ -86,12 +83,7 @@ const Dashboard = ({ setAuth }) => {
       await setVv(true);
       axios.post("https://api.digimytch.com/api/addinstructor", { name: name, stat: stat, photo: response.data.secure_url }).then(() => {
         setLoadAdd(false);
-      }).then(() => {
-        Axios.get("https://api.digimytch.com/api/gettrainers").then((data) => {
-          setTrainers(data.data);
-        }, []);
       });
-
     })
   }
   const editPhoto = async () => {
@@ -176,6 +168,9 @@ const Dashboard = ({ setAuth }) => {
                       {vv && (
                         <div className="dmt__dashboard-contents">
                           <h1>You have added the instructor successfuly! </h1>
+                          <div className="dmt__gradient-button">
+                            <button onClick={() => { setAdd(false); setVv(false); }}>Consult the list</button>
+                          </div>
                         </div>
                       )}
                     </React.Fragment>
@@ -209,14 +204,12 @@ const Dashboard = ({ setAuth }) => {
                                     setPerson(data.data[0]);
                                   })
                                 }} />
-                                <AiIcons.AiOutlineDelete className='table__icons-elt' onClick={async () => {
-                                  await axios.post("https://api.digimytch.com/api/deleteinstructor", { id: val.id }).then(() => {
-                                    setmodDel(true);
-                                  });
+                                <AiIcons.AiOutlineDelete className='table__icons-elt' onClick={() => {
+                                  axios.post("https://api.digimytch.com/api/deleteinstructor", { id: val.id });
+                                  setDelIns(true);
                                   Axios.get("https://api.digimytch.com/api/gettrainers").then((data) => {
                                     setTrainers(data.data);
                                   });
-
                                 }} /></th>
                             </tr>
                           )
