@@ -49,7 +49,7 @@ const Contact = () => {
     setMessage(event.target.value);
   };
   return (
-    <div className='dmt__contact'>
+    <div className='dmt__contact fade-in'>
       <div className="dmt__contact-header">
 
       </div>

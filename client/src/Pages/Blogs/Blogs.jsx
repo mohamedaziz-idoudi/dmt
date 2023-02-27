@@ -14,7 +14,7 @@ const Blogs = () => {
     })
   },[])
   return (
-    <div className='dmt__blogs section__padding'>
+    <div className='dmt__blogs section__padding fade-in'>
       {Array.from(postList).map((val, key) => {
         return (
           <div className="dmt__blogs-item" key={key}>

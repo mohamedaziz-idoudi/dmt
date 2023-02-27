@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CRUD_TR from './Pages/CRUD_TR/CRUD_TR';
 function App() {
   const ThemeContext = createContext(null);
   const [isAuth, setAuth] = useState(false);

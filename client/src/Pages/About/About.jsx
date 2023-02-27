@@ -17,7 +17,7 @@ const About = () => {
     })
   },[])
   return (
-    <div className='dmt__about'>
+    <div className='dmt__about fade-in'>
       <div className="dmt__about-header">
         <h1>{t('about.title')}</h1>
       </div>

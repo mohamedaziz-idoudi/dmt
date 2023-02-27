@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Axios from 'axios'
-import { useNavigate } from 'react-router-dom';
 import { Image } from 'cloudinary-react';
 import {Form} from '../../Components'
 import './training.css'
@@ -14,7 +13,7 @@ const Training = () => {
         })
     }, [])
     return (
-        <div className='dmt__training-container'>
+        <div className='dmt__training-container fade-in'>
             <div className="dmt__training-container_header section__padding">
                 <Image
                     cloudName="dbx8tzoes"

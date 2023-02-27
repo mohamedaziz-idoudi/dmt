@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './home.css'
-import placeholder from '../../assets/john doe.jpg'
 import part1 from '../../assets/logostudentplus.png'
-import part3 from '../../assets/Fichier 2.png'
 import part2 from '../../assets/fst.png'
 import part from '../../assets/LOGO PRINCIPAL.png'
 import { useTranslation } from 'react-i18next'
@@ -35,7 +33,7 @@ const Home = () => {
     }
   }, [])
   return (
-    <div className='dmt__home'>
+    <div className='dmt__home fade-in'>
       <div className="dmt__home-header">
         <div className="dmt__home-header_content fade-in">
           <div className="dmt__home-header_content-left">

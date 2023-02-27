@@ -3,25 +3,23 @@ import './footer.css'
 import logo from '../../assets/logo.png'
 import * as GoIcons from 'react-icons/go'
 import * as AiIcons from 'react-icons/ai'
-import { useNavigate } from 'react-router-dom'
-import { Icon } from '@iconify/react';
+import * as react from '@iconify/react';
 import {useTranslation} from 'react-i18next'
 const Footer = () => {
     const {t} = useTranslation();
-    const navigate = useNavigate();
     return (
         <div className='arsolaire__footer'>
             <footer>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-sm-4 col-md-3 item" id='arsolaire_def'>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-sm-4 col-md-3 item" id='arsolaire_def'>
                             <img src={logo} alt="LOGO" />
                         </div>
-                        <div class="col-sm-4 col-md-3 item">
+                        <div className="col-sm-4 col-md-3 item">
                             <h3>Contact</h3>
                             <p>{t('footer.contact')}</p>
                         </div>
-                        <div class="col-sm-4 col-md-3 item footer_item">
+                        <div className="col-sm-4 col-md-3 item footer_item">
                             <h3>{t('footer.coor')}</h3>
                             <div className="arsolaire__footer_line">
                                 <GoIcons.GoLocation className='footer__icon' />
@@ -36,13 +34,13 @@ const Footer = () => {
                                 <p id='footer_email'>digimytch@gmail.com</p>
                             </div>
                         </div>
-                        <div class="col-lg-3 item social">
-                            <a href="https://www.facebook.com/profile.php?id=100088438584749" target="_blank" rel="noreferrer"><i class="icon ion-social-facebook"></i></a>
-                            <a href="https://tn.linkedin.com/company/digimytch?trk=public_profile_topcard-current-company" target="_blank" rel="noreferrer"><i class="icon ion-social-linkedin"></i></a>
-                            <a href="#"><i class="icon ion-social-youtube"></i></a>
-                            <a href="https://www.instagram.com/digimytch.tn/?hl=fr"target="_blank" rel="noreferrer"><i class="icon ion-social-instagram"></i></a>
-                            <a href="https://www.tiktok.com/@digimitch" target="_blank" rel="noreferrer"><Icon icon="ion:logo-tiktok" /></a>
-                            <p class="copyright"><a href="https://www.facebook.com/profile.php?id=100085406739373" target="blank">© Created by ONCA Solution - 2022</a></p>
+                        <div className="col-lg-3 item social">
+                            <a href="https://www.facebook.com/profile.php?id=100088438584749" target="_blank" rel="noreferrer"><i className="icon ion-social-facebook"></i></a>
+                            <a href="https://tn.linkedin.com/company/digimytch?trk=public_profile_topcard-current-company" target="_blank" rel="noreferrer"><i className="icon ion-social-linkedin"></i></a>
+                            <a href="#"><i className="icon ion-social-youtube"></i></a>
+                            <a href="https://www.instagram.com/digimytch.tn/?hl=fr"target="_blank" rel="noreferrer"><i className="icon ion-social-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@digimitch" target="_blank" rel="noreferrer"><react.Icon icon="ion:logo-tiktok" /></a>
+                            <p className="copyright"><a href="https://www.facebook.com/profile.php?id=100085406739373" target="blank">© Created by ONCA Solution - 2022</a></p>
                         </div>
                     </div>
                 </div>
