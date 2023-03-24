@@ -136,3 +136,8 @@
         padding: 1rem !important;
     }
 }
+@media (max-width:520px) {
+    .dmt__training-content_item h2  {
+        font-size: 2em;
+    }
+}

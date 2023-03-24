@@ -125,7 +125,9 @@
 }
 .dmt__about-trainers_item img {
     width: 200px;
+    height: 200px;
     border-radius: 50%;
+    object-fit: cover;
 }
 .dmt__about-trainers_item-paragraph {
     width: 200px;
