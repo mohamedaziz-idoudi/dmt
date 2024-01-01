@@ -12,6 +12,8 @@ import axios from 'axios';
 import logo from '../../assets/logo.png'
 import Table from 'react-bootstrap/Table';
 import CRUD_TR from '../CRUD_TR/CRUD_TR';
+import ManagePartners from '../../Components/ManagePartners/ManagePartners';
+import Testimonials from '../../Components/Testimonials/Testimonials';
 
 const Dashboard = ({ setAuth }) => {
   const navigate = useNavigate()
@@ -34,11 +36,13 @@ const Dashboard = ({ setAuth }) => {
   const [editStat, setEditStat] = useState(false);
   const [edit, setEdit] = useState(false);
   const [selectedRow, setSelectedRow] = useState();
+  const [partners, setPartners] = useState()
   const [loading, setLoading] = useState(false);
   const [loadAdd, setLoadAdd] = useState(false);
+  const [test,setTest] = useState(false)
   const [modDel, setmodDel] = useState(false);
   const [addCat, setAddCat] = useState(false);
-  const [delIns,setDelIns] = useState(false);
+  const [delIns, setDelIns] = useState(false);
   const [listCat, setListCat] = useState([{}]);
 
   const changeName = async (e) => {
@@ -112,10 +116,12 @@ const Dashboard = ({ setAuth }) => {
             <img src={logo} alt="LOGO" />
             <div className="dmt__dashboard-sidebar_links">
               <ul>
-                <li onClick={() => { setBlog(true); setSign(false); setTraining(false); setInstructor(false) }}>Create Blog</li>
-                <li onClick={() => { setBlog(false); setSign(true); setTraining(false); setInstructor(false) }}>Consult Sign Ups</li>
-                <li onClick={() => { setBlog(false); setSign(false); setTraining(true); setInstructor(false); }}>Manage Trainings</li>
-                <li onClick={() => { setBlog(false); setSign(false); setTraining(false); setInstructor(true) }}>Manage Instructors</li>
+                <li onClick={() => { setBlog(true); setSign(false); setTraining(false); setInstructor(false); setPartners(false);setTest(false) }}>Create Blog</li>
+                <li onClick={() => { setBlog(false); setSign(true); setTraining(false); setInstructor(false); setPartners(false);setTest(false) }}>Consult Sign Ups</li>
+                <li onClick={() => { setBlog(false); setSign(false); setTraining(true); setInstructor(false); setPartners(false);setTest(false) }}>Manage Trainings</li>
+                <li onClick={() => { setBlog(false); setSign(false); setTraining(false); setInstructor(true); setPartners(false);setTest(false) }}>Manage Instructors</li>
+                <li onClick={() => { setBlog(false); setSign(false); setTraining(false); setInstructor(false); setPartners(true);setTest(false) }}>Manage Partners</li>
+                <li onClick={() => { setBlog(false); setSign(false); setTraining(false); setInstructor(false); setPartners(false);setTest(true) }}>Students' Testimonials</li>
               </ul>
             </div>
           </div>
@@ -128,6 +134,13 @@ const Dashboard = ({ setAuth }) => {
           {sign && (
             <Inscriptions />
           )}
+          {
+            partners &&
+            <ManagePartners />
+          }
+          {test && 
+            <Testimonials />
+          }
           {
             instructor && (
               <div className="dmt__dashboard-control">

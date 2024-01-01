@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -8,13 +9,21 @@ import part from '../../assets/LOGO PRINCIPAL.png'
 import { useTranslation } from 'react-i18next'
 const Home = () => {
   const [playAnimation, setPlayAnimation] = useState(false);
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [postList, setPostList] = useState({});
   const [training, setTraining] = useState({});
+  const [partners, setPartners] = useState([{}])
+  const [testimonials, setTestimonials] = useState([{}])
   useEffect(() => {
+    Axios.get('https://api.digimytch.com/api/gettestimonials').then((data) => {
+      setTestimonials(data.data)
+    })
     Axios.get("https://api.digimytch.com/api/getposts").then((data) => {
       setPostList(data.data[0]);
+    })
+    Axios.get('https://api.digimytch.com/api/getpartners').then((data) => {
+      setPartners(data.data)
     })
     Axios.get("https://api.digimytch.com/api/get_trainings").then((data) => {
       setTraining(data.data[0]);
@@ -69,26 +78,18 @@ const Home = () => {
           <h2>Feedbacks</h2>
         </div>
         <div className="dmt__home-feedbacks_content section__padding">
-          <div className="dmt__home-feedbacks_content-item">
-            <div className="dmt__home-feedbacks_content-item_left">
-              <h5>Ellouze, Eya</h5>
-              <p>{t('home.feedbacks.eya')} "3inik lehlowa"</p>
+          {Array.from(testimonials).map((val, key) => (
+            <div className="dmt__home-feedbacks_content-item" key={key}>
+              <div className="dmt__home-feedbacks_content-item_left">
+                <h5>{val.name}</h5>
+                <p>{val.occupation}</p>
+              </div>
+              <div className="dmt__home-feedbacks_content-item_middle"></div>
+              <div className="dmt__home-feedbacks_content-item_right">
+                <p>{`"${val.testimonial}"`}</p>
+              </div>
             </div>
-            <div className="dmt__home-feedbacks_content-item_middle"></div>
-            <div className="dmt__home-feedbacks_content-item_right">
-              <p>"Belhak kenet formation khfifa w taalamt menha barcha hajet fi periode sghira, chokran jazilan surtt aala wsaa bel mteeik maana"</p>
-            </div>
-          </div>
-          <div className="dmt__home-feedbacks_content-item">
-            <div className="dmt__home-feedbacks_content-item_left">
-              <h5>Gataa, Imen</h5>
-              <p>{t('home.feedbacks.imen')}</p>
-            </div>
-            <div className="dmt__home-feedbacks_content-item_middle"></div>
-            <div className="dmt__home-feedbacks_content-item_right">
-              <p>"Je veux vraiment te remercier Nour alla kolchy amaltou maana tout au long de la formation, je suis très reconnaissante pour m'avoir donner l'occasion d'avoir toutes ces informations sur le design graphique 3awentni barcha théoriquement et sur tt pratiquement."</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       <div className="dmt__about-mission section__padding">
@@ -101,9 +102,11 @@ const Home = () => {
       <div className="dmt__about-mission dmt__partners section__padding">
         <h2>{t('home.partners')}</h2>
         <div className="dmt__partners-images">
-          <a href="https://www.facebook.com/EnactusFSTmanar" target="_blank" rel="noreferrer"><img src={part2} alt="Partenaire" /></a>
-          <a href="https://www.facebook.com/designersJE" target="_blank" rel="noreferrer"><img src={part} alt="Partenaire" /></a>
-          <a href="https://studentplus.tn/" target="_blank" rel="noreferrer"><img src={part1} alt="Partenaire" /></a>
+          {Array.from(partners).map((val, key) => (
+            <a href="#">
+              <img src={val.link} alt="Partner Logo" key={key} />
+            </a>
+          ))}
         </div>
       </div>
     </div>

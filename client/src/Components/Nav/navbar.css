@@ -117,7 +117,7 @@
     flex-direction: column;
 
     text-align: end;
-    background: wheat;
+    background: white;
     padding: 2rem ;
     position: absolute;
     top: 40px;
@@ -141,6 +141,8 @@
 }
 .dmt__navbar-menu_container-links a {
     width: 100% ;
+    font-weight: 600;
+    font-size: 1.2em;
 }
 .dmt__navbar-menu_container-links-sign {
     display: none;

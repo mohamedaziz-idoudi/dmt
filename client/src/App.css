@@ -9,7 +9,9 @@ a {
   color: unset;
   text-decoration: none;
 }
-
+textarea {
+  width: 100% !important;
+}
 .gradient__text {
   background: var(--gradient);
   background-clip: text;
